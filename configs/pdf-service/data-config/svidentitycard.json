@@ -162,6 +162,12 @@
                 }
               },
               {
+                "variable": "businessId",
+                "value": {
+                  "path": "$.workflow.businessId"
+                }
+              },
+              {
                 "variable": "sex",
                 "value": {
                   "path": "$.vendorDetail[0].gender"
@@ -276,7 +282,7 @@
             "qrcodeConfig": [
               {
                 "variable": "qrcodeImage",
-                "value": "/digit-ui/citizen/payment/verification?tenantId={{tenantid}}&receiptNumber={{receiptNo}}"
+                "value": "/digit-ui/citizen/sv/application/{{businessId}}/{{tenantId}}"
               }
             ]
           }
