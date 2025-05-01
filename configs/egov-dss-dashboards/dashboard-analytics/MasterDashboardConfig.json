@@ -8234,7 +8234,7 @@
       ]
     },
     {
-      "name": "NSS_WS_DASHBOARD",
+      "name": "NSS_WS_DASHBOARD", 
       "id": "national-ws",
       "isActive": "",
       "style": "linear",
@@ -10013,27 +10013,27 @@
             },
             {
               "id": 207,
-              "name": "NURT_FSSM",
+              "name": "DSS_STREET_VENDING",
               "vizType": "module",
-              "moduleLevel": "FSM",
+              "moduleLevel": "SV",
               "ref": {
-                "url": "national-chb",
+                "url": "national-sv",
                 "logoUrl": "",
                 "type": "internal"
               },
               "label": "",
               "charts": [
                 {
-                  "id": "fsmtotalCollection",
-                  "name": "NATIONAL_DSS_TOTAL_CUMULATIVE_COLLECTION_FSM",
+                  "id": "totalStreetVending",  
+                  "name": "NATIONAL_DSS_SV_TOTAL_VENDING",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "fsmtotalrequests",
-                  "name": "DSS_TOTAL_REQUESTS_FSM",
+                  "id": "nssSvTotalConnection",
+                  "name": "NATIONAL_DSS_SV_TOTAL_CERTIFICATE_IDCARD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -10045,7 +10045,6 @@
         }
       ]
     },
-
     {
       "name": "NATIONAL_DSS_PGR_DASHBOARD",
       "id": "national-pgr",
@@ -11289,62 +11288,78 @@
       ]
     },
     {
-      "name": "NSS_BIRTH_DEATH",
-      "id": "national-chb",
+      "name": "NSS_SV_DASHBOARD",     
+      "id": "national-sv",
       "isActive": "",
       "style": "linear",
       "visualizations": [
         {
           "row": 1,
-          "name": "NSS_BIRTH",
+          "name": "NSS_REVENUE",
           "vizArray": [
             {
-              "id": 311,
-              "name": "NSS_BIRTH_OVERVIEW",
+              "id": 211,
+              "name": "NSS_NATIONAL_WS_OVERVIEW",
               "dimensions": {
                 "height": 350,
                 "width": 5
               },
               "vizType": "metric-collection",
-              "label": "NSS_BIRTH_OVERVIEW",
               "noUnit": true,
               "isCollapsible": false,
+              "label": "NSS_OVERVIEW",
               "charts": [
                 {
-                  "id": "nssBirthTotalCertificateDownload",
-                  "name": "NSS_BIRTH_TOTAL_CERTIFICATE_DOWNLOAD",
+                  "id": "nssWsTargetCollection",
+                  "name": "NSS_WS_TARGET_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "nssBirthTotalCollection",
-                  "name": "NSS_BIRTH_TOTAL_COLLECTION",
+                  "id": "nssWsTargetAchieved",
+                  "name": "NSS_WS_TARGET_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "slaComplainceBirth",
-                  "name": "DSS_SLA_COMPLAINCE_BIRTH",
+                  "id": "nssWsTotalCollection",
+                  "name": "NSS_WS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "avgDaysToIssueBirthCert",
-                  "name": "DSS_AVG_DAYS_TO_ISSUE_BIRTH_CERT",
+                  "id": "wstodaysLastYearCollectionv3",
+                  "name": "NATIONAL_DSS_TODAYS_LAST_YEAR_COLLECTION_WS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": { "title": "TODAY" },
+                  "headers": []
+                },
+                {
+                  "id": "nssWsTodaysCollection",
+                  "name": "NSS_WS_TODAYS_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": { "title": "TODAY" },
+                  "headers": []
+                },
+                {
+                  "id": "avgDaysForWSConnection",
+                  "name": "DSS_AVG_DAYS_FOR_WS_CONNECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "StipulatedDaysforBirthCert",
-                  "name": "DSS_STIPULATED_DAYS_FOR_BIRTH_CERT",
+                  "id": "StipulatedDaysforWS",
+                  "name": "DSS_STIPULATED_DAYS_FOR_WS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -11353,17 +11368,18 @@
               ]
             },
             {
-              "id": 342,
-              "name": "NSS_BIRTH_CERTIFICATE_DOWNLOAD_TREND",
+              "id": "212",
+              "name": "NSS_WS_TOTAL_CUMULATIVE_COLLECTION",
               "dimensions": {
                 "height": 350,
                 "width": 7
               },
               "vizType": "chart",
+              "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "nssBirthCertificateDownloadTrend",
+                  "id": "nssWsCumulativeCollections",
                   "name": "Monthly",
                   "code": "",
                   "chartType": "line",
@@ -11376,23 +11392,176 @@
         },
         {
           "row": 2,
-          "name": "NSS_BIRTH",
+          "name": "NSS_REVENUE",
           "vizArray": [
             {
-              "id": 323,
-              "name": "NSS_NUMBER_OF_BIRTH_CERTIFICATE_DOWNLOAD_BY_CHANNEL",
+              "id": 125,
+              "name": "NATIONAL_DSS_TOP_3_PERFORMING_STATES_REVENUE_POPULATION",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "wstopPerformingStatesRevenue",
+                  "name": "NATIONAL_DSS_TOP_3_PERFORMING_STATES_REVENUE_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Revenue"
+                },
+                {
+                  "id": "wstopPerformingStatesRevenuePopulation",
+                  "name": "NATIONAL_DSS_TOP_3_PERFORMING_STATES_REVENUE_POPULATION_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Population"
+                },
+                {
+                  "id": "wstopPerformingStatesRevenuePerHousehold",
+                  "name": "NATIONAL_DSS_TOP_3_PERFORMING_STATES_REVENUE_HOUSEHOLD_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Household"
+                },
+                {
+                  "id": "wstopPerformingStatesRevenueGDP",
+                  "name": "NATIONAL_DSS_TOP_3_PERFORMING_STATES_REVENUE_GDP_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "GDP"
+                }
+              ]
+            },
+            {
+              "id": 124,
+              "name": "NATIONAL_DSS_BOTTOM_3_PERFORMING_STATES_REVENUE_POPULATION",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "wsbottomPerformingStatesRevenue",
+                  "name": "NATIONAL_DSS_BOTTOM_3_PERFORMING_STATES_REVENUE_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Revenue"
+                },
+                {
+                  "id": "wsbottomPerformingStatesRevenuePopulation",
+                  "name": "NATIONAL_DSS_BOTTOM_3_PERFORMING_STATES_REVENUE_POPULATION_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Population"
+                },
+                {
+                  "id": "wsbottomPerformingStatesRevenuePerHousehold",
+                  "name": "NATIONAL_DSS_BOTTOM_3_PERFORMING_STATES_REVENUE_HOUSEHOLD_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Household"
+                },
+                {
+                  "id": "wsbottomPerformingStatesRevenueGDP",
+                  "name": "NATIONAL_DSS_BOTTOM_3_PERFORMING_STATES_REVENUE_GDP_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "GDP"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "NSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 226,
+              "name": "NATIONAL_DSS_TOP_3_PERFORMING_STATES_SLA_WS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "wstopPerformingStatesSLA",
+                  "name": "NATIONAL_DSS_TOP_3_PERFORMING_STATES_SLA_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "SLA"
+                }
+              ]
+            },
+            {
+              "id": 227,
+              "name": "NATIONAL_DSS_BOTTOM_3_PERFORMING_STATES_SLA_WS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "wsbottomPerformingStatesSLA",
+                  "name": "NATIONAL_DSS_BOTTOM_3_PERFORMING_STATES_SLA_WS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "SLA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "NSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 223,
+              "name": "NSS_WS_COLLECTION_BY_USAGE",
               "dimensions": {
                 "height": 250,
                 "width": 4
               },
               "vizType": "chart",
-              "label": "",
-              "noUnit": false,
+              "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "nssNumberOfBirthCertificateDownloadByChannel",
-                  "name": "NSS_NUMBER_OF_BIRTH_CERTIFICATE_DOWNLOAD_BY_CHANNEL",
+                  "id": "nssWsCollectionByUsage",
+                  "name": "NSS_WS_COLLECTION_BY_USAGE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -11401,20 +11570,19 @@
               ]
             },
             {
-              "id": 342,
-              "name": "NSS_NUMBER_OF_BIRTHS_TODAY_BY_GENDER",
+              "id": 224,
+              "name": "NSS_WS_COLLECTION_BY_CHANNEL",
               "dimensions": {
                 "height": 250,
                 "width": 4
               },
               "vizType": "chart",
-              "label": "",
-              "noUnit": false,
+              "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "nssNumberOfBirthsTodayByGender",
-                  "name": "NSS_NUMBER_OF_BIRTHS_TODAY_BY_GENDER",
+                  "id": "nssWsCollectionByChannel",
+                  "name": "NSS_WS_COLLECTION_BY_CHANNEL",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -11425,24 +11593,23 @@
           ]
         },
         {
-          "row": 3,
-          "name": "NSS_BIRTH",
+          "row": 5,
+          "name": "NSS_REVENUE",
           "vizArray": [
             {
-              "id": 431,
-              "name": "NSS_CERT_DOWNLOAD_BY_BOUNDARY",
+              "id": 231,
+              "name": "NSS_WS_KEY_FY_INDICATORS",
               "dimensions": {
                 "height": 350,
                 "width": 12
               },
               "vizType": "chart",
-              "label": "",
               "noUnit": false,
-              "isCollapsible": true,
+              "isCollapsible": false,
               "charts": [
                 {
-                  "id": "nssNumberOfBirthCertificateDownloadByBoundary",
-                  "name": "NSS_CERT_DOWNLOAD_BY_BOUNDARY",
+                  "id": "nssWsFinancialIndicatorState",
+                  "name": "NSS_WS_DEMAND_COLLECTION_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -11454,56 +11621,101 @@
           ]
         },
         {
-          "row": 5,
-          "name": "NSS_DEATH",
+          "row": 6,
+          "name": "NSS_REVENUE",
           "vizArray": [
             {
-              "id": 311,
-              "name": "NSS_DEATH_OVERVIEW",
+              "id": 231,
+              "name": "NSS_WS_TAX_HEAD_BOUNDARY",
               "dimensions": {
                 "height": 350,
-                "width": 5
+                "width": 12
               },
-              "vizType": "metric-collection",
-              "label": "NSS_DEATH_OVERVIEW",
-              "noUnit": true,
-              "isCollapsible": false,
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
               "charts": [
                 {
-                  "id": "nssDeathTotalCertificateDownload",
-                  "name": "NSS_DEATH_TOTAL_CERTIFICATE_DOWNLOAD",
+                  "id": "nssWsTaxHeadState",
+                  "name": "NSS_WS_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "NSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "NSS_NATIONAL_WS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "metric-collection",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "nssWsTotalApplications",
+                  "name": "NSS_WS_TOTAL_APPLICATIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "nssDeathTotalCollection",
-                  "name": "NSS_DEATH_TOTAL_COLLECTION",
+                  "id": "nssWsSLACompliance",
+                  "name": "NSS_WS_SLA_COMPLIANCE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "slaComplainceDeath",
-                  "name": "DSS_SLA_COMPLAINCE_DEATH",
+                  "id": "nssWsTotalConnection",
+                  "name": "NSS_WS_ACTIVE_CONNECTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "avgDaysToIssueDeathCert",
-                  "name": "DSS_AVG_DAYS_TO_ISSUE_DEATH_CERT",
+                  "id": "nssWsActiveMeteredWaterConnection",
+                  "name": "NSS_WS_ACTIVE_METERED_WATER_CONNECTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "StipulatedDaysforDeathCert",
-                  "name": "DSS_STIPULATED_DAYS_FOR_DEATH_CERT",
+                  "id": "nssWsActiveNonMeteredWaterConnection",
+                  "name": "NSS_WS_ACTIVE_NON_METERED_WATER_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "nssWsActiveSewerageConnection",
+                  "name": "NSS_WS_ACTIVE_SEWERAGE_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "nssWSPendancy",
+                  "name": "NATIONAL_DSS_WS_PENDANCY",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -11512,8 +11724,8 @@
               ]
             },
             {
-              "id": 342,
-              "name": "NSS_DEATH_CERTIFICATE_DOWNLOAD_TREND",
+              "id": 232,
+              "name": "NSS_WS_CUMULATIVE_CONNECTION",
               "dimensions": {
                 "height": 350,
                 "width": 7
@@ -11522,7 +11734,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "nssDeathCertificateDownloadTrend",
+                  "id": "nssWsCumulativeConnections",
                   "name": "Monthly",
                   "code": "",
                   "chartType": "line",
@@ -11534,80 +11746,12 @@
           ]
         },
         {
-          "row": 6,
-          "name": "NSS_DEATH",
+          "row": 8,
+          "name": "NSS_SERVICE",
           "vizArray": [
             {
-              "id": 323,
-              "name": "NSS_NUMBER_OF_DEATH_CERTIFICATE_DOWNLOAD_BY_CHANNEL",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "nssNumberOfDeathCertificateDownloadByChannel",
-                  "name": "NSS_NUMBER_OF_DEATH_CERTIFICATE_DOWNLOAD_BY_CHANNEL",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 542,
-              "name": "NSS_NUMBER_OF_DEATHS_BY_CATEGORY",
-              "dimensions": {
-                "height": 350,
-                "width": 7
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "nssNumberOfDeathsByCategory",
-                  "name": "NSS_NUMBER_OF_DEATHS_BY_CATEGORY",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 542,
-              "name": "NSS_NUMBER_OF_DEATHS_BY_AGE",
-              "dimensions": {
-                "height": 350,
-                "width": 7
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "nssNumberOfDeathsByAge",
-                  "name": "NSS_NUMBER_OF_DEATHS_BY_AGE",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 7,
-          "name": "NSS_DEATH",
-          "vizArray": [
-            {
-              "id": 431,
-              "name": "NSS_CERT_DOWNLOAD_BY_TENANT",
+              "id": 231,
+              "name": "NSS_WS_WATER_CONNECTION_BY_USAGE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -11618,12 +11762,85 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "nssNumberOfDeathCertificateDownloadByBoundary",
-                  "name": "NSS_DEATH_CERT_DOWNLOAD_BY_BOUNDARY",
+                  "id": "nssWsWaterConnectionByUsageType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "NSS_WS_SEWERAGE_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "nssWsSewerageConnectionByUsageType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 233,
+              "name": "NSS_WS_CONNECTION_BY_CHANNEL",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "nssWsConnectionByChannelType",
+                  "name": "NSS_WS_CONNECTION_BY_CHANNEL",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "name": "NSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "NSS_WS_CONNECTION_AGEING",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "nssWsConnectionAgeingState",
+                  "name": "NSS_WS_CONNECTION_AGEING",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
-                  "headers": []
+                  "headers": [],
+                  "tabName": "Boundary"
                 }
               ]
             }
