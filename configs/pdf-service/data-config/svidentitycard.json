@@ -185,6 +185,12 @@
                 }
               },
               {
+                "variable": "businessId",
+                "value": {
+                  "path": "$.workflow.businessId"
+                }
+              },
+              {
                 "variable": "sex",
                 "value": {
                   "path": "$.vendorDetail[0].gender"
