@@ -7,7 +7,7 @@ ReportDefinitions:
     moduleName: rainmaker-CHB
     sourceColumns:
       - name: applicant_name
-        label: rainmaker.CHB.name
+        label: rainmaker.CHB.applicant_name
         type: string
         source: CHB
         total: false
@@ -85,7 +85,7 @@ ReportDefinitions:
     moduleName: rainmaker-CHB
     sourceColumns:
       - name: applicant_name
-        label: rainmaker.CHB.name
+        label: rainmaker.CHB.applicant_name
         type: string
         source: CHB
         total: false
