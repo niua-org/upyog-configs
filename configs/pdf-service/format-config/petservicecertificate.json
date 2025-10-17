@@ -58,7 +58,7 @@
       {
         "text": "Pet's Name: {{Pet_Name}}",
         "style": "subheader",
-        "margin": [0, 0, 0, 10]
+        "margin": [0, 0, 0, 1]
       },
       {
         "text": "Pet's Token: {{Pet_Token}}",
@@ -66,7 +66,7 @@
         "margin": [0, 0, 0, 1]
       },
       {
-        "text": "Validity Date: {{Validity_Date}}",
+        "text": "Validity Date: {{validityDate}}",
         "style": "subheader",
         "margin": [0, 0, 0, 1]
       },
