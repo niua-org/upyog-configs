@@ -47,7 +47,7 @@ serviceMaps:
       fromTopic: save-allotment-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO ug_em_allotment_details(allotment_id, estate_no, tenant_id, user_uuid, allotee_name, mobile_number, alternate_contact_no, email_id, agreement_start_date, agreement_end_date, duration, rate, monthly_rent, advance_payment, allotment_date, advance_payment_date, eoffice_file_no, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO ug_em_allotment_details(allotment_id, estate_no, tenant_id, user_uuid, allotee_name, mobile_number, alternate_contact_no, email_id, agreement_start_date, agreement_end_date, duration, rate, monthly_rent, advance_payment, allotment_date, advance_payment_date, eoffice_file_no, asset_reference_no, property_type, citizen_request_letter, allotment_letter, signed_deed, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: Allotments.*
           jsonMaps:
             - jsonPath: $.Allotments.*.allotmentId
@@ -67,6 +67,11 @@ serviceMaps:
             - jsonPath: $.Allotments.*.allotmentDate
             - jsonPath: $.Allotments.*.advancePaymentDate
             - jsonPath: $.Allotments.*.eofficeFileNo
+            - jsonPath: $.Allotments.*.assetReferenceNo
+            - jsonPath: $.Allotments.*.propertyType
+            - jsonPath: $.Allotments.*.citizenRequestLetter
+            - jsonPath: $.Allotments.*.allotmentLetter
+            - jsonPath: $.Allotments.*.signedDeed
             - jsonPath: $.Allotments.*.auditDetails.createdBy
             - jsonPath: $.Allotments.*.auditDetails.lastModifiedBy
             - jsonPath: $.Allotments.*.auditDetails.createdTime
