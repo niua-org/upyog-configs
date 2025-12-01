@@ -80,7 +80,7 @@
           "body": [
             [
               {
-                "text": "{{receipt_no}}.",
+                "text": "Receipt No.",
                 "border": [
                   true,
                   true,
@@ -101,7 +101,7 @@
                 "font": "Roboto"
               },
               {
-                "text": "{{idType}}",
+                "text": "ID",
                 "border": [
                   false,
                   true,
@@ -144,7 +144,7 @@
                 "style": "receipt-table"
               },
               {
-                "text": "{{applicantName}}",
+                "text": "Name",
                 "border": [
                   false,
                   false,
@@ -166,7 +166,7 @@
             ],
             [
               {
-                "text": "{{contact}}",
+                "text": "Contact",
                 "border": [
                   true,
                   false,
@@ -208,7 +208,7 @@
             ],
             [
               {
-                "text": "{{PROPERTY_ID}}",
+                "text": "BPA Property ID",
                 "border": [
                   true,
                   false,
