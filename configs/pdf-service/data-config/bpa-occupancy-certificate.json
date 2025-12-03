@@ -1,5 +1,5 @@
 {
-  "key": "occupancy-certificate",
+  "key": "bpa-occupancy-certificate",
   "DataConfigs": {
     "serviceName": "rainmaker-bpa",
     "version": "1.0.0",
