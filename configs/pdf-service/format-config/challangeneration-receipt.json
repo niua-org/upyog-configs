@@ -202,7 +202,7 @@
                 "style": "receipt-table-value-down"
               },
               {
-                "text": "{{TotalChallanAmount}}",
+                "text": "{{paidAmount}}",
                 "border": [false, true, true, true],
                 "bold": true,
                 "style": "receipt-table-value-down"

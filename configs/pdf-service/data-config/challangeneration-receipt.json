@@ -79,7 +79,6 @@
                   "path": "$.totalAmountPaid"
                 }
               },
-
               {
                 "variable": "tenantid",
                 "value": {
@@ -190,7 +189,6 @@
                   "module": "rainmaker-common"
                 }
               },
-
               {
                 "variable": "challan_term_1",
                 "value": {
@@ -522,30 +520,6 @@
                 }
               },
               {
-                "variable": "offenceTypeName",
-                "value": {
-                  "path": "$.challan.challans[0].offenceTypeName"
-                }
-              },
-              {
-                "variable": "offenceDescription",
-                "value": {
-                  "path": "$.challan.challans[0].description"
-                }
-              },
-              {
-                "variable": "offenceCategoryName",
-                "value": {
-                  "path": "$.challan.challans[0].offenceCategoryName"
-                }
-              },
-              {
-                "variable": "offenceSubCategoryName",
-                "value": {
-                  "path": "$.challan.challans[0].offenceSubCategoryName"
-                }
-              },
-              {
                 "variable": "to",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_TO"
@@ -605,7 +579,32 @@
           {
             "externalAPI": [
               {
+                "path": "http://challan-generation:8080/challan-generation/challan/_search",
+                "requesttype": "POST",
+                "queryParam": "tenantId={$.tenantId},challanNo={$.paymentDetails[0].bill.consumerCode}",
+                "apiRequest": null,
+                "responseMapping": [
+                  {
+                    "variable": "offenceTypeName",
+                    "value": "$.challans[0].offenceTypeName"
+                  },
+                  {
+                    "variable": "offenceCategoryName",
+                    "value": "$.challans[0].offenceCategoryName"
+                  },
+                  {
+                    "variable": "offenceSubCategoryName",
+                    "value": "$.challans[0].offenceSubCategoryName"
+                  },
+                  {
+                    "variable": "offenceDescription",
+                    "value": "$.challans[0].description"
+                  }
+                ]
+              },
+              {
                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                "requesttype": "POST",
                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pg&filter=%5B?(@.code=='{$.tenantId}')%5D",
                 "apiRequest": null,
                 "responseMapping": [
@@ -623,7 +622,7 @@
                   },
                   {
                     "variable": "ulbType",
-                    "value": "$.MdmsRes.tenant.tenants[0].city.ulbType"
+                    "value": "$.MdmsRes.tenant.tenants[0].city.ulbGrade"
                   },
                   {
                     "variable": "email",
@@ -647,6 +646,7 @@
               },
               {
                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                "requesttype": "POST",
                 "queryParam": "moduleName=tenant&masterName=footer&tenantId=pg&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
                 "apiRequest": null,
                 "responseMapping": [
@@ -678,7 +678,7 @@
             "qrcodeConfig": [
               {
                 "variable": "qrcodeimage",
-                "value": "/digit-ui/citizen/payment/verification?tenantId={{tenantid}}&receiptNumber={{receiptNo}}"
+                "value": "/upyog-ui/citizen/payment/verification?tenantId={{tenantid}}&receiptNumber={{receiptNo}}"
               }
             ]
           }
