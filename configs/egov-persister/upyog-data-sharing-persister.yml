@@ -17,7 +17,7 @@ serviceMaps:
 
         - query: >
             INSERT INTO public.ug_pfms_data
-            (id, state, ward, module, data_date, ulb, target_destination)
+            (id, state, ward, module, data_received_on, ulb, target_destination)
             VALUES
             (?, ?, ?, ?, TO_DATE(?, 'DD-MM-YYYY'), ?, ?);
 
