@@ -1,7 +1,7 @@
 ---
 ReportDefinitions:        
   - reportName: Categorywisechallanreport
-    decryptionPathId: StateTradeLicenseCancelledRegistryReport
+    decryptionPathId: CHALLANREPORTS
     summary: Challan wise detail report per tenant according to status
     version: 1.0.0
     moduleName: rainmaker-ch
@@ -113,7 +113,7 @@ ReportDefinitions:
          LEFT JOIN eg_user u on u.uuid = c.accountid
          WHERE 1=1
   - reportName: StateCategoryWiseChallanDetailReport
-    decryptionPathId: StateTradeLicenseCancelledRegistryReport
+    decryptionPathId: CHALLANREPORTS
     summary: Challan wise detail report per tenant
     version: 1.0.0
     moduleName: rainmaker-ch
@@ -233,7 +233,7 @@ ReportDefinitions:
          LEFT JOIN eg_user u on u.uuid = c.accountid
          WHERE 1=1
   - reportName: ChallanDefaulterReport
-    decryptionPathId: StateTradeLicenseCancelledRegistryReport
+    decryptionPathId: CHALLANREPORTS
     summary: Details of user who doesnt pay his challan within 10 days till now.
     version: 1.0.0
     moduleName: rainmaker-ch
@@ -362,7 +362,7 @@ ReportDefinitions:
         WHERE 1=1
     orderby: ORDER BY pending_days DESC
   - reportName: StateChallanDefaulterReport
-    decryptionPathId: StateTradeLicenseCancelledRegistryReport
+    decryptionPathId: CHALLANREPORTS
     summary: Details of user who doesnt pay his challan within 10 days till now.
     version: 1.0.0
     moduleName: rainmaker-ch

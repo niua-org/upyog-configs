@@ -557,7 +557,7 @@ ReportDefinitions:
          AND payment.paymentstatus != 'CANCELLED'
     orderby: ORDER BY pd.receiptnumber,pd.receiptdate DESC;
   - reportName: StateApplicationDetailReport
-    decryptionPathId: STATENDCAPPLICATION
+    decryptionPathId: NDCAPPLICATION
     summary: Details of applicant in ndc service
     version: 1.0.0
     moduleName: rainmaker-ndc
@@ -667,7 +667,7 @@ ReportDefinitions:
         LEFT JOIN current_holder ch ON ch.applicationno = a.applicationno
         WHERE a.tenantid not in ('pb.testing')
   - reportName: StateCollectionsReport
-    decryptionPathId: STATENDCAPPLICATION
+    decryptionPathId: NDCAPPLICATION
     summary: Collections
     version: 1.0.0
     moduleName: rainmaker-ndc
@@ -846,7 +846,7 @@ ReportDefinitions:
              where rn=1
     orderby: ORDER BY createdtime DESC
   - reportName: StateSLAReport
-    decryptionPathId: STATENDCAPPLICATION
+    decryptionPathId: NDCAPPLICATION
     summary: SLA report for NDC service
     version: 1.0.0
     moduleName: rainmaker-ndc
@@ -998,7 +998,7 @@ ReportDefinitions:
             WHERE UPPER(ls.applicationstatus) NOT IN ('APPLY','INITIATED','PENDINGPAYMENT') and tenantid not in ('pb.testing')          
     orderby: ORDER BY n.createdtime DESC, tenantid, final_status
   - reportName: StateReceiptRegisterNDC
-    decryptionPathId: STATENDCAPPLICATION
+    decryptionPathId: NDCAPPLICATION
     summary: Details of collector register in ndc service
     version: 1.0.0
     moduleName: rainmaker-ndc
