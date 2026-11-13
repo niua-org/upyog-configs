@@ -1,0 +1,241 @@
+{
+  "key": "family-certificate",
+  "config": {
+    "pageMargins": [30, 30, 30, 30],
+    "defaultStyle": {
+      "font": "Cambay",
+      "fontSize": 8.5
+    },
+    "content": [
+      {
+        "table": {
+          "widths": [80, "*", 80],
+          "body": [
+            [
+              {
+                "image": "{{qrcodeimage}}",
+                "width": 65,
+                "height": 65,
+                "alignment": "left"
+              },
+              {
+                "stack": [
+                  {
+                    "image": "{{logoImage}}",
+                    "width": 65,
+                    "height": 38,
+                    "alignment": "center",
+                    "margin": [0, 0, 0, 4]
+                  },
+                  {
+                    "text": "Urban Platform for DeliverY of Online Governance (UPYOG)",
+                    "fontSize": 11,
+                    "bold": true,
+                    "alignment": "center"
+                  },
+                  {
+                    "text": "परिवार पहचान पत्र / Family Identification Certificate",
+                    "fontSize": 13,
+                    "bold": true,
+                    "alignment": "center",
+                    "margin": [0, 2, 0, 0]
+                  }
+                ],
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "alignment": "right"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders",
+        "margin": [0, 0, 0, 10]
+      },
+      {
+        "table": {
+          "widths": ["50%", "50%"],
+          "body": [
+            [
+              {
+                "text": [
+                  { "text": "परिवार की आईडी / Family ID: ", "bold": true },
+                  { "text": "{{familyId}}" }
+                ],
+                "fontSize": 9.5
+              },
+              {
+                "text": [
+                  { "text": "जारी करने की तिथि / Issue Date: ", "bold": true },
+                  { "text": "{{createdDate}}" }
+                ],
+                "alignment": "right",
+                "fontSize": 9.5
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders",
+        "margin": [0, 0, 0, 8]
+      },
+      {
+        "table": {
+          "widths": ["25%", "25%", "25%", "25%"],
+          "body": [
+            [
+              {
+                "stack": [
+                  { "text": "मुखिया का नाम / Head of Family:", "bold": true },
+                  { "text": "{{headName}}", "margin": [0, 2, 0, 0] }
+                ]
+              },
+              {
+                "stack": [
+                  { "text": "जिला / District:", "bold": true },
+                  { "text": "{{district}}", "margin": [0, 2, 0, 0] }
+                ]
+              },
+              {
+                "stack": [
+                  { "text": "खंड/शहर / Block/City:", "bold": true },
+                  { "text": "{{city}}", "margin": [0, 2, 0, 0] }
+                ]
+              },
+              {
+                "stack": [
+                  { "text": "गाँव/वार्ड / Village/Ward:", "bold": true },
+                  { "text": "{{ward}}", "margin": [0, 2, 0, 0] }
+                ]
+              }
+            ],
+            [
+              {
+                "colSpan": 3,
+                "stack": [
+                  { "text": "पता / Address:", "bold": true },
+                  { "text": "{{address}}", "margin": [0, 2, 0, 0] }
+                ]
+              },
+              {},
+              {},
+              {
+                "stack": [
+                  { "text": "Family Income (Declared):", "bold": true },
+                  { "text": "{{familyIncome}}", "margin": [0, 2, 0, 0] }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": {},
+        "margin": [0, 0, 0, 10]
+      },
+      {
+        "table": {
+          "headerRows": 1,
+          "widths": [
+            "10%",
+            "9%",
+            "9%",
+            "10%",
+            "9%",
+            "4%",
+            "10%",
+            "11%",
+            "7%",
+            "9%",
+            "6%",
+            "6%"
+          ],
+          "body": [
+            [
+              { "text": "नाम / Name", "style": "tableHeader" },
+              { "text": "पिता का नाम / Father Name", "style": "tableHeader" },
+              { "text": "माता का नाम / Mother Name", "style": "tableHeader" },
+              { "text": "DOB", "style": "tableHeader" },
+              { "text": "Relation with HOF", "style": "tableHeader" },
+              { "text": "Age", "style": "tableHeader" },
+              { "text": "Mobile Number", "style": "tableHeader" },
+              { "text": "Aadhaar Number", "style": "tableHeader" },
+              { "text": "Member Income", "style": "tableHeader" },
+              { "text": "Occupation", "style": "tableHeader" },
+              { "text": "Caste", "style": "tableHeader" },
+              { "text": "Is Divyang (Y/N)", "style": "tableHeader" }
+            ],
+            "{{#membersList}}[{\"text\":\"{{name}}\",\"style\":\"tableBody\"},{\"text\":\"{{fatherName}}\",\"style\":\"tableBody\"},{\"text\":\"{{motherName}}\",\"style\":\"tableBody\"},{\"text\":\"{{dob}}\",\"style\":\"tableBody\"},{\"text\":\"{{relationshipWithHead}}\",\"style\":\"tableBody\"},{\"text\":\"{{age}}\",\"style\":\"tableBody\"},{\"text\":\"{{mobileNumber}}\",\"style\":\"tableBody\"},{\"text\":\"{{aadhaarNumber}}\",\"style\":\"tableBody\"},{\"text\":\"{{memberIncome}}\",\"style\":\"tableBody\"},{\"text\":\"{{occupation}}\",\"style\":\"tableBody\"},{\"text\":\"{{caste}}\",\"style\":\"tableBody\"},{\"text\":\"{{#isDivyang}}YES{{/isDivyang}}{{^isDivyang}}NO{{/isDivyang}}\",\"style\":\"tableBody\"}]{{/membersList}}"
+          ]
+        },
+        "layout": {},
+        "margin": [0, 0, 0, 12]
+      },
+      {
+        "stack": [
+          {
+            "text": "I hereby give my consent to share Aadhaar with Government / UPYOG.",
+            "fontSize": 8,
+            "margin": [0, 0, 0, 2]
+          },
+          {
+            "text": "I hereby declare that above details are true and correct to the best of my knowledge.",
+            "fontSize": 8,
+            "margin": [0, 0, 0, 15]
+          }
+        ]
+      },
+      {
+        "columns": [
+          {
+            "text": "",
+            "width": "60%"
+          },
+          {
+            "stack": [
+              {
+                "text": "Parivar Pehchan Authority",
+                "bold": true,
+                "alignment": "center",
+                "fontSize": 8.5
+              }
+            ],
+            "width": "40%"
+          }
+        ],
+        "margin": [0, 0, 0, 15]
+      },
+      {
+        "stack": [
+          {
+            "text": [
+              { "text": "DISCLAIMER: ", "bold": true },
+              "The information displayed on this page is NOT proof of verified information. This information should NOT be construed as 'verified information' provided by UPYOG Parivar Pehchan Authority, or used for any legal purpose. Users are advised to cross-check authenticity of any information with the concerned Government department."
+            ],
+            "fontSize": 7,
+            "color": "#333333",
+            "margin": [0, 0, 0, 6]
+          },
+          {
+            "text": [
+              { "text": "अस्वीकरण: ", "bold": true },
+              "इस पृष्ठ पर प्रदर्शित जानकारी सत्यापित जानकारी का प्रमाण नहीं है। इस जानकारी को परिवार पहचान प्राधिकरण द्वारा प्रदान की गई 'सत्यापित जानकारी' के रूप में या किसी कानूनी उद्देश्य के लिए उपयोग नहीं किया जाना चाहिए। उपयोगकर्ताओं को सलाह दी जाती है कि वे सम्बन्धित सरकारी विभाग के साथ किसी भी जानकारी की प्रमाणिकता की जांच करें।"
+            ],
+            "fontSize": 7,
+            "color": "#333333"
+          }
+        ]
+      }
+    ],
+    "styles": {
+      "tableHeader": {
+        "bold": true,
+        "fontSize": 7.5,
+        "alignment": "center",
+        "fillColor": "#F0F0F0"
+      },
+      "tableBody": {
+        "fontSize": 7,
+        "alignment": "center"
+      }
+    }
+  }
+}

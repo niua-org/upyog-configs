@@ -1,0 +1,188 @@
+{
+  "key": "family-certificate",
+  "documentType": "FAMILYCERTIFICATE",
+  "DataConfigs": {
+    "moduleName": "family-services",
+    "version": "1.0.0",
+    "baseKeyPath": "$.Families.*",
+    "entityIdPath": "$.familyId",
+    "isCommonTableBorderRequired": true,
+    "mappings": [
+      {
+        "mappings": [
+          {
+            "direct": [
+              {
+                "variable": "logoImage",
+                "url": "https://in-egov-assets.s3.ap-south-1.amazonaws.com/in.citya/logo.png",
+                "type": "image"
+              },
+              {
+                "variable": "familyId",
+                "value": {
+                  "path": "$.familyId"
+                }
+              },
+              {
+                "variable": "tenantId",
+                "value": {
+                  "path": "$.tenantId"
+                }
+              },
+              {
+                "variable": "district",
+                "value": {
+                  "path": "$.additionalDetails.district"
+                }
+              },
+              {
+                "variable": "city",
+                "value": {
+                  "path": "$.additionalDetails.city"
+                }
+              },
+              {
+                "variable": "ward",
+                "value": {
+                  "path": "$.additionalDetails.ward"
+                }
+              },
+              {
+                "variable": "address",
+                "value": {
+                  "path": "$.additionalDetails.address"
+                }
+              }
+            ]
+          },
+          {
+            "externalAPI": [
+              {
+                "path": "http://localhost:6737/family/v1/family/_search",
+                "queryParam": "tenantId=$.tenantId,familyId=$.familyId",
+                "apiRequest": null,
+                "requesttype": "POST",
+                "responseMapping": [
+                  {
+                    "variable": "familyId",
+                    "value": "$.Families[0].familyId"
+                  },
+                  {
+                    "variable": "headName",
+                    "value": "$.Families[0].headName"
+                  },
+                  {
+                    "variable": "status",
+                    "value": "$.Families[0].status"
+                  },
+                  {
+                    "variable": "familyType",
+                    "value": "$.Families[0].familyType"
+                  },
+                  {
+                    "variable": "createdDate",
+                    "value": "$.Families[0].auditDetails.createdTime",
+                    "type": "date",
+                    "format": "DD/MM/YYYY"
+                  },
+                  {
+                    "variable": "district",
+                    "value": "$.Families[0].additionalDetails.district"
+                  },
+                  {
+                    "variable": "city",
+                    "value": "$.Families[0].additionalDetails.city"
+                  },
+                  {
+                    "variable": "ward",
+                    "value": "$.Families[0].additionalDetails.ward"
+                  },
+                  {
+                    "variable": "address",
+                    "value": "$.Families[0].additionalDetails.address"
+                  },
+                  {
+                    "variable": "membersList",
+                    "value": "$.Families[0].members.*",
+                    "type": "array",
+                    "format": {
+                      "type": "string",
+                      "scema": [
+                        {
+                          "variable": "name",
+                          "value": "name"
+                        },
+                        {
+                          "variable": "fatherName",
+                          "value": "citizenDetails.fatherName"
+                        },
+                        {
+                          "variable": "motherName",
+                          "value": "citizenDetails.motherName"
+                        },
+                        {
+                          "variable": "dob",
+                          "value": "dob",
+                          "type": "date",
+                          "format": "DD/MM/YYYY"
+                        },
+                        {
+                          "variable": "relationshipWithHead",
+                          "value": "relationshipWithHead"
+                        },
+                        {
+                          "variable": "age",
+                          "value": "age"
+                        },
+                        {
+                          "variable": "mobileNumber",
+                          "value": "mobileNumber"
+                        },
+                        {
+                          "variable": "aadhaarNumber",
+                          "value": "aadhaarNumber"
+                        },
+                        {
+                          "variable": "memberIncome",
+                          "value": "income.annualIncome"
+                        },
+                        {
+                          "variable": "occupation",
+                          "value": "income.occupation"
+                        },
+                        {
+                          "variable": "caste",
+                          "value": "citizenDetails.caste"
+                        },
+                        {
+                          "variable": "isDivyang",
+                          "value": "citizenDetails.isSpeciallyAbled"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "qrcodeConfig": [
+              {
+                "variable": "qrcodeimage",
+                "value": "/upyog-ui/citizen/family/services?tenantId={{tenantId}}&familyId={{familyId}}"
+              }
+            ]
+          },
+          {
+            "derived": [
+              {
+                "variable": "familyIncome",
+                "formula": "0 {{#membersList}}+{{memberIncome}}{{/membersList}}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
