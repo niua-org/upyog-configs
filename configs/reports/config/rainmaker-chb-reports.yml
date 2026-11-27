@@ -1,7 +1,7 @@
 ---
 ReportDefinitions:
   - reportName: CHBDailyRegisterReport
-    decryptionPathId: StateTradeLicenseCancelledRegistryReport
+    decryptionPathId: CHBReport
     summary: CHB Daily Register Report
     version: 1.0.0
     moduleName: rainmaker-CHB
@@ -79,7 +79,7 @@ ReportDefinitions:
       where a.booking_id=b.booking_id and b.receipt_no=p.receiptnumber and b.booking_id=h.booking_id
       and 1=1
   - reportName: CHBRefundReport
-    decryptionPathId: TradeLicenseDailyCollectionReport
+    decryptionPathId: CHBReport
     summary: CHB Refund Report
     version: 1.0.0
     moduleName: rainmaker-CHB
@@ -157,7 +157,7 @@ ReportDefinitions:
       where a.booking_id=b.booking_id and b.receipt_no=p.receiptnumber and b.booking_id=h.booking_id and h.status='REFUNDAPPROVED'
       and 1=1
   - reportName: PaymentRefundReport
-    decryptionPathId: TradeLicenseDailyCollectionReport
+    decryptionPathId: CHBReport
     summary: Payment Refund Report
     version: 1.0.0
     moduleName: rainmaker-CHB
