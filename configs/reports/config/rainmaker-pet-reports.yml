@@ -1,6 +1,7 @@
 ---
 ReportDefinitions:
 - reportName: PetReport
+  decryptionPathId: PetReport
   summary: Fetches pet data based on provided search parameters
   version: 1.0.0
   moduleName: rainmaker-pet
