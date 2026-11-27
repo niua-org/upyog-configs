@@ -1,7 +1,7 @@
 ---
 ReportDefinitions:
   - reportName: AssetapplicationReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Asset Application Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -124,7 +124,7 @@ ReportDefinitions:
         WHERE 
         1 = 1
   - reportName: AssetapplicationReportULBwise
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Asset Application Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -267,7 +267,7 @@ ReportDefinitions:
     orderby: ORDER BY b.tenantId asc
 
   - reportName: AssetAssignmentReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Asset Assignment Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -415,7 +415,7 @@ ReportDefinitions:
         1=1
 
   - reportName: AssetDisposalReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Asset Disposal Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -556,7 +556,7 @@ ReportDefinitions:
         1=1
         
   - reportName: AssetMaintenanceReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Asset Maintenance Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -703,7 +703,7 @@ ReportDefinitions:
         AND 
         1=1   
   - reportName: AssetCountReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Asset Count Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -759,7 +759,7 @@ ReportDefinitions:
         ORDER BY total_originalbookvalue DESC
         
   - reportName: LandReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Land Assets Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -1035,7 +1035,7 @@ ReportDefinitions:
         a.parentcategory = 'LAND'
 
   - reportName: DetailedBuildingAssetsReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Detailed Building Assets Report
     version: 1.0.0
     moduleName: rainmaker-asset
@@ -1277,7 +1277,7 @@ ReportDefinitions:
         b.parentcategory = 'BUILDING'
 
   - reportName: PlantsMachineryReport
-    decryptionPathId: AssetReport
+    decryptionPathId: ObpsDailyCollectionReport
     summary: Plants and Machinery Assets Report
     version: 1.0.0
     moduleName: rainmaker-asset
