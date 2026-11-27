@@ -26,3 +26,4 @@ rainmaker-ndc=file:///work-dir/upyog-configs/configs/reports/config/ndc-reports.
 rainmaker-ch=file:///work-dir/upyog-configs/configs/reports/config/challan-reports.yml
 rainmaker-gc=file:///work-dir/upyog-configs/configs/reports/config/rainmaker-garbage-reports.yml
 rainmaker-em=file:///work-dir/upyog-configs/configs/reports/config/rainmaker-estate-report.yml
+rainmaker-family=file:///work-dir/upyog-configs/configs/reports/config/rainmaker-family-report.yml
